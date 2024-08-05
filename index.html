@@ -1,32 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Be My Valentine</title>
     <link rel="stylesheet" href="css/valentine.css" />
-  </head>
-  <body>
-    <div id="valentineQuestion"><b>Will you be my valentine?</b></div>
-    <button class="answerButton" onclick="location.href='thankyou.html'">
-      Yes
-    </button>
-    <button class="answerButton" id="noButton">I no no wanna o(╥﹏╥)o</button>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* Ensure positioning context for absolute positioning */
+            height: 200px; /* Set a fixed height to limit the movement area of the buttons */
+        }
+
+        .answerButton {
+            margin: 10px;
+            position: relative; /* Ensure buttons are positioned relative to the container */
+        }
+    </style>
+</head>
+<body>
+    <div id="valentineQuestion"><b>Will you be my girlfriend?</b></div>
+    <div class="container">
+        <button class="answerButton" id="yesButton" onclick="location.href='thankyou.html'">
+            Yes, be my Cosmic Lover 💛
+        </button>
+        <button class="answerButton" id="noButton">SAY "NO" TO SEULGI o(╥﹏╥)o</button>
+    </div>
     <br />
-    <img src="cat.gif" alt="cat asking question" class="responsive" />
+    <img src="seulgi.gif" alt="cat asking question" class="responsive" />
 
     <script>
-      document
-        .getElementById("noButton")
-        .addEventListener("click", function () {
-          var yesButton = document.querySelector(
-            'button[onclick*="thankyou.html"]'
-          );
-          var currentFontSize = parseInt(
-            window.getComputedStyle(yesButton).fontSize
-          );
-          yesButton.style.fontSize = currentFontSize + 10 + "px"; // Increase font size by 5px
+        var noButtonTexts = [
+            "YOU MONSTER!!! I CAN'T BELIEVE YOU SAID NO D:",
+            "HOW COULD YOU?!",
+            "ARE YOU SURE? REALLY?",
+            "WHY WOULD YOU DO THIS? :(",
+            "SHE'S JUST A BABY",
+            "PLEASE, RECONSIDER...",
+            "I just said please :/",
+            "You're having a fun time clicking the button, huh?",
+            "PLS STOP HARRASSING THE BUTTON",
+            "POLICE! POLICE! POLICE",
+            "The button is tired... just say yes PLEASE T_T"
+        ];
+        var noButtonClickCount = 0;
+
+        document.getElementById("noButton").addEventListener("click", function () {
+            var noButton = document.getElementById("noButton");
+
+            // Change the text of the "No" button
+            noButton.textContent = noButtonTexts[noButtonClickCount];
+            
+            if (noButtonClickCount < noButtonTexts.length - 1) {
+                noButtonClickCount++;
+                
+                // Generate random positions within the container
+                var container = document.querySelector('.container');
+                var containerRect = container.getBoundingClientRect();
+                var maxX = containerRect.width - noButton.offsetWidth;
+                var maxY = containerRect.height - noButton.offsetHeight;
+
+                var randomX = Math.floor(Math.random() * maxX);
+                var randomY = Math.floor(Math.random() * maxY);
+
+                // Set new position
+                noButton.style.position = 'absolute';
+                noButton.style.left = randomX + 'px';
+                noButton.style.top = randomY + 'px';
+            }
         });
     </script>
-  </body>
+</body>
 </html>

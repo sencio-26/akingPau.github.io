@@ -1,62 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Thank You</title>
     <link rel="stylesheet" href="css/flower.css" />
-  </head>
-  <body>
-    <div id="thankyou"><b>Thank you for being my girlfriend</b></div>
-    <div class="flower">
-      <div class="f-wrapper">
-        <div class="flower__line"></div>
-        <div class="f">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__leaf flower__leaf--5"></div>
-          <div class="flower__leaf flower__leaf--6"></div>
-          <div class="flower__leaf flower__leaf--7"></div>
-          <div
-            class="flower__leaf flower__leaf--8 flower__fall-down--yellow"
-          ></div>
-        </div>
-      </div>
+    <link rel="stylesheet" href="cherry.css">
+    <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
+    <script src="https://code.createjs.com/tweenjs-0.6.2.min.js"></script>
+    <script src="cherry.js"></script>
+    <style>
+        *,
+        *::after,
+        *::before {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
 
-      <div class="f-wrapper f-wrapper--2">
-        <div class="flower__line"></div>
-        <div class="f">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__leaf flower__leaf--5"></div>
-          <div class="flower__leaf flower__leaf--6"></div>
-          <div class="flower__leaf flower__leaf--7"></div>
-          <div
-            class="flower__leaf flower__leaf--8 flower__fall-down--pink"
-          ></div>
-        </div>
-      </div>
+        :root {
+            --color-bg: linear-gradient(to top,#010329,#000005);
+            --color-glass: linear-gradient(to left,#142544,#1a9092);
+            --color-water: linear-gradient(to left,#142544,#1b6d6e);
+            --typewriterSpeed: 6s;
+            --typewriterCharacters: 24;
+        }
 
-      <div class="f-wrapper f-wrapper--3">
-        <div class="flower__line"></div>
-        <div class="f">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__leaf flower__leaf--5"></div>
-          <div class="flower__leaf flower__leaf--6"></div>
-          <div class="flower__leaf flower__leaf--7"></div>
-          <div
-            class="flower__leaf flower__leaf--8 flower__fall-down--purple"
-          ></div>
-        </div>
-      </div>
-      <div class="flower__glass"></div>
+        body {
+            background-color: #1e2b58;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            overflow: hidden;
+            color: #FF9494;
+            font-family: courier;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        #rizz {
+            width: 50%;
+            max-width: 300px;
+            height: auto;
+        }
+
+        #thankyou {
+            margin-top: 20px;
+            font-size: 50px;
+            color: #FFEA00;
+            position: relative;
+            font-family: "Source Code Pro", monospace;
+            width: max-content;
+        }
+
+        #thankyou::before,
+        #thankyou::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        #thankyou::before {
+            background: #1e2b58;
+            animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards;
+        }
+
+        #thankyou::after {
+            width: 0.125em;
+            background: black;
+            animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards, blink 750ms steps(var(--typewriterCharacters)) infinite;
+        }
+
+        @keyframes typewriter {
+            to {
+                left: 100%;
+            }
+        }
+
+        @keyframes blink {
+            to {
+                background: transparent;
+            }
+        }
+
+        .subtitle {
+            color: hsl(0 0% 0% / 0.7);
+            font-size: 2rem;
+            font-weight: 400;
+            opacity: 0;
+            transform: translateY(3rem);
+            animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="treeCanvas"></canvas>
+    <canvas id="leavesCanvas" width="500" height="300"></canvas>
+    <div class="container">
+        <img id="rizz" src="LR.png" alt="LR" class="responsive" />
+        <div id="thankyou"><b>Thank you for saying yes...</b></div>
+        <audio id="myAudio" controls autoplay>
+            <source src="10cm.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
     </div>
-  </body>
+</body>
 </html>

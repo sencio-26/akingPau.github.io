@@ -1,0 +1,13 @@
+#treeCanvas {
+	position: absolute;
+	width: 38.00%;	/*Change this in order to change space that the branch takes*/
+	height: 71,4%;	/*Change this in order to change space that the branch takes*/
+	z-index: -2;
+	right: 0;
+}
+
+#leavesCanvas {
+	position: absolute;
+	z-index: -1;
+    right: 0;
+}
