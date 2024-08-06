@@ -1,24 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Be My Valentine</title>
-    <link rel="stylesheet" href="css/valentine.css" />
-    <style>
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative; /* Ensure positioning context for absolute positioning */
-            height: 200px; /* Set a fixed height to limit the movement area of the buttons */
-        }
-
-        .answerButton {
-            margin: 10px;
-            position: relative; /* Ensure buttons are positioned relative to the container */
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Girlfriend?</title>
+    <link rel="stylesheet" href="css/valentine.css">
 </head>
 <body>
     <div id="valentineQuestion"><b>Will you be my girlfriend?</b></div>
@@ -28,8 +14,8 @@
         </button>
         <button class="answerButton" id="noButton">SAY "NO" TO SEULGI o(╥﹏╥)o</button>
     </div>
-    <br />
-    <img src="seulgi.gif" alt="cat asking question" class="responsive" />
+    <br>
+    <img src="seulgi.gif" alt="cat asking question" class="responsive">
 
     <script>
         var noButtonTexts = [
@@ -50,13 +36,11 @@
         document.getElementById("noButton").addEventListener("click", function () {
             var noButton = document.getElementById("noButton");
 
-            // Change the text of the "No" button
             noButton.textContent = noButtonTexts[noButtonClickCount];
             
             if (noButtonClickCount < noButtonTexts.length - 1) {
                 noButtonClickCount++;
                 
-                // Generate random positions within the container
                 var container = document.querySelector('.container');
                 var containerRect = container.getBoundingClientRect();
                 var maxX = containerRect.width - noButton.offsetWidth;
@@ -65,7 +49,6 @@
                 var randomX = Math.floor(Math.random() * maxX);
                 var randomY = Math.floor(Math.random() * maxY);
 
-                // Set new position
                 noButton.style.position = 'absolute';
                 noButton.style.left = randomX + 'px';
                 noButton.style.top = randomY + 'px';
