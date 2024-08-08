@@ -85,19 +85,20 @@ form .header {
   font-size: 18px;
   cursor: pointer;
   margin: 20px auto;
-  font-family: "Courier New", monospace;
-  background-color: rgba(255, 227, 225, 0.8);
-  color: #e67373;
+  font-family: 'Roboto', sans-serif;
+  background-color: rgba(225, 245, 254, 0.8);
+  color: #0277bd;
   border-radius: 12px;
-  border: 2px solid rgba(255, 227, 225, 0.8);
+  border: 2px solid rgba(225, 245, 254, 0.8);
   transition: 0.3s;
 }
 
 .button:hover {
-  background-color: #ff9494;
-  color: #ffe3e1;
-  border: 2px solid #ff9494;
+  background-color: #0277bd;
+  color: #e1f5fe;
+  border: 2px solid #0277bd;
 }
+t
 
 .button.star-button {
   background-color: rgba(225, 245, 254, 0.8);
@@ -110,7 +111,6 @@ form .header {
   color: #e1f5fe;
   border: 2px solid #0277bd;
 }
-
 
 input[type="date"] {
   padding: 10px 20px;
