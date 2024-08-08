@@ -1,62 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Proposal</title>
     <link rel="stylesheet" href="css/start.css" />
-  </head>
-  <body>
-    <div id="thankyou"><b>Thank you for being my girlfriend</b></div>
-    <div class="flower">
-      <div class="f-wrapper">
-        <div class="flower__line"></div>
-        <div class="f">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__leaf flower__leaf--5"></div>
-          <div class="flower__leaf flower__leaf--6"></div>
-          <div class="flower__leaf flower__leaf--7"></div>
-          <div
-            class="flower__leaf flower__leaf--8 flower__fall-down--yellow"
-          ></div>
-        </div>
-      </div>
+</head>
+<body>
+    <div id="thankyou"><b>Congratulations, My Pau!</b></div>
 
-      <div class="f-wrapper f-wrapper--2">
-        <div class="flower__line"></div>
-        <div class="f">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__leaf flower__leaf--5"></div>
-          <div class="flower__leaf flower__leaf--6"></div>
-          <div class="flower__leaf flower__leaf--7"></div>
-          <div
-            class="flower__leaf flower__leaf--8 flower__fall-down--pink"
-          ></div>
-        </div>
-      </div>
+    <!-- Envelope Container -->
+    <div class="envelope-container">
+        <div class="envelope">
+            <div class="flap"></div>
+            <div class="open-text">Open</div>
+            <div class="note">
+                <p>Dear Pau,</p>
+                <p>
+                    Congratulations on your boards! I am so proud of you. I made this website project just for you. 
+                    Here's a tulip flowervase because I can't give you one physically. I hope you accept this instead!
+                </p>
+                
+                <p>
+                    I remember a scene from Robin William's film "Good Will Hunting", where he discusses the correlation of love and regret. 
+                    Robin shares about little imperfect moments like how his late wife used to fart in her sleep. In analogy, I love how you tend to get 
+                    embarrassed when you do something cheesy or especially the time when you tried to feed me chicken and I fumbled it, it was so funny that we 
+                    talked about it afterwards to clear up the misunderstanding. Love isn't about perfection; its about cherishing the real, everyday moments, flaws 
+                    and all. He said, “People call these things imperfections, but they're not. Ah, that's the good stuff.”
 
-      <div class="f-wrapper f-wrapper--3">
-        <div class="flower__line"></div>
-        <div class="f">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__leaf flower__leaf--5"></div>
-          <div class="flower__leaf flower__leaf--6"></div>
-          <div class="flower__leaf flower__leaf--7"></div>
-          <div
-            class="flower__leaf flower__leaf--8 flower__fall-down--purple"
-          ></div>
+                </p>
+                    
+                <p> 
+                    Recalling about the moment we shared made me realized how much I value the time we've spent together, will all its imperfections. 
+                    The little, mundane moments - they are all special to me.
+                </p>
+
+                <p> 
+                    Sean, the other protagonist of the film, reflects on the perception of regret. He confronts Will that regrets doesn't come from the mistakes or
+                    the past we endured. Real regrets are about the missed opportunities, and the missed connections we don't make. He implies that true regrets
+                    come from not having loved at all. If I never met you, that would be a regret. If we never made up, that would be a regret. 
+                    If we never get to try, that would be regret.
+                </p>
+
+                <p>
+                    In closing this note, I want to say "here's to cherishing the moments that we have." I am grateful for every text and call we've shared, and I look forward
+                    to many more. Missing out in not trying this relationship of ours would be my greatest regret which is something I'd never I want to live with.
+                    I am thankful everyday that we didn't let that happen.
+                </p>
+
+                <p>
+                    "I'll love you until the last petal falls." P.S. You can click the petals!
+                </p>
+
+                <p class="move-to-side">
+                    With love, Mollen
+                </p>
+            </div>
         </div>
-      </div>
-      <div class="flower__glass"></div>
     </div>
-  </body>
+
+    <div class="flower">
+        <div class="f-wrapper">
+            <div class="flower__line"></div>
+            <div class="f">
+                <div class="flower__leaf flower__leaf--1" onclick="fall(this)"></div>
+                <div class="flower__leaf flower__leaf--2" onclick="fall(this)"></div>
+                <div class="flower__leaf flower__leaf--3" onclick="fall(this)"></div>
+                <div class="flower__leaf flower__leaf--4" onclick="fall(this)"></div>
+                <div class="flower__leaf flower__leaf--5" onclick="fall(this)"></div>
+                <div class="flower__leaf flower__leaf--6"></div>
+                <div class="flower__leaf flower__leaf--7" onclick="fall(this)"></div>
+                <div class="flower__leaf flower__leaf--8 flower__fall-down--yellow unfallable"></div>
+            </div>
+        </div>
+
+        <div class="f-wrapper f-wrapper--2">
+            <div class="flower__line"></div>
+            <div class="f">
+                <div class="flower__leaf flower__leaf--1" onclick="fall(this)"></div>
+                <div class="flower__leaf flower__leaf--2" onclick="fall(this)"></div>
+                <div class="flower__leaf flower__leaf--3" onclick="fall(this)"></div>
+                <div class="flower__leaf flower__leaf--4" onclick="fall(this)"></div>
+                <div class="flower__leaf flower__leaf--5" onclick="fall(this)"></div>
+                <div class="flower__leaf flower__leaf--6" onclick="fall(this)"></div>
+                <div class="flower__leaf flower__leaf--7" onclick="fall(this)"></div>
+                <div class="flower__leaf flower__leaf--8 flower__fall-down--pink unfallable"></div>
+            </div>
+        </div>
+
+        <div class="f-wrapper f-wrapper--3">
+            <div class="flower__line"></div>
+            <div class="f">
+                <div class="flower__leaf flower__leaf--1" onclick="fall(this)"></div>
+                <div class="flower__leaf flower__leaf--2" onclick="fall(this)"></div>
+                <div class="flower__leaf flower__leaf--3" onclick="fall(this)"></div>
+                <div class="flower__leaf flower__leaf--4" onclick="fall(this)"></div>
+                <div class="flower__leaf flower__leaf--5" onclick="fall(this)"></div>
+                <div class="flower__leaf flower__leaf--6" onclick="fall(this)"></div>
+                <div class="flower__leaf flower__leaf--7" onclick="fall(this)"></div>
+                <div class="flower__leaf flower__leaf--8 flower__fall-down--purple unfallable"></div>
+            </div>
+        </div>
+        <div class="flower__glass"></div>
+    </div>
+
+    <div class="button-wrapper">
+        <button class="button" type="button" onclick="goToNextPage()">Next</button>
+    </div>
+
+    <script>
+        function goToNextPage() {
+            window.location.href = "ask.html";
+        }
+        function fall(petal) {
+            if (!petal.classList.contains('unfallable')) {
+                petal.classList.add('fall-slow');
+            }
+        }
+
+        // Add event listener to the envelope
+        document.addEventListener("DOMContentLoaded", function() {
+            var envelope = document.querySelector('.envelope');
+            envelope.addEventListener('click', function() {
+                this.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
 </html>
